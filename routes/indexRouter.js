@@ -16,7 +16,7 @@ const messages = [
 
 const links = [
   { href: "/", text: "Home" },
-  { href: "new", text: "New Message" },
+  { href: "/new", text: "New Message" },
 ];
 
 indexRouter.get("/", (req, res) => {
@@ -24,17 +24,22 @@ indexRouter.get("/", (req, res) => {
 });
 
 indexRouter.get("/new", (req, res) => {
-  res.render("form", {title: "New Message", links: links})
-});
-
-indexRouter.get("/:indexId", (req, res) => {
-  const { indexId } = req.params;
-  res.send(`Index ID: ${indexId}`);
+  res.render("form", {title: "New Message", links: links});
 });
 
 indexRouter.post("/new", (req, res) => {
   messages.push({text: req.body.messageText, user: req.body.messageUser, added: new Date() });
   res.redirect("/");
+})
+
+indexRouter.get("/:username/messages/:date", (req, res) => {
+  for (const message of messages) {
+    if (message.user === req.params.username && message.added.toDateString() === new Date(req.params.date).toDateString()) {
+      res.render("./messages/messageDetails", {title:"Message Details", message: message, links: links})
+      return;
+    }
+  }
+  res.status(404).send("Message not found");
 })
 
 module.exports = indexRouter;
