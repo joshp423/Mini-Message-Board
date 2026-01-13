@@ -1,10 +1,119 @@
+body {
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-weight: 500;
+    margin: 0;
+    background: #000000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(22, 33, 48, 1) 100%);
+    color: white;
+}
+
 nav {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(49, 6, 88, 0.3);
+    padding: 10px 0px 10px 0px;
 }
 
 ul {
     list-style-type:none;
     display: flex;
+    gap: 15px;
     flex-direction: row;
+    margin: 0;
 }
+
+li {
+    box-shadow: rgba(94, 12, 170, 0.3) 0px 3px 8px;
+}
+
+a {
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px 5px 10px;
+    border: solid 2px rgba(49, 6, 88, 0.3);
+    border-radius: 15px;
+    background-color: white;
+}
+
+h1, h3 {
+    margin: 0;
+}
+
+.messageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.messageSection>div {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px 20px 80px;
+    margin-top: 20px;
+    min-width: 30%;
+    max-width: 30%;
+    background-color: rgba(49, 6, 88, 0.1);
+    border: solid 2px rgba(87, 13, 156, 0.5);
+    border-radius: 20px;
+    box-shadow: rgba(94, 12, 170, 0.3) 0px 3px 8px;
+}
+
+.messageSection>div>a {
+    align-self: center;
+    padding: 5px 15px 5px 15px;
+}
+
+.messageDetail {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px 20px 100px;
+    margin-top: 20px;
+    max-width: 50%;
+    background-color: rgba(49, 6, 88, 0.1);
+    border: solid 2px rgba(87, 13, 156, 0.5);
+    border-radius: 20px;
+    box-shadow: rgba(94, 12, 170, 0.3) 0px 3px 8px;
+    justify-self: center;
+}
+
+.messageDetail>a {
+    align-self: center;
+    padding: 5px 15px 5px 15px;
+}
+
+.newMessage {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px 50px 100px;
+    margin-top: 20px;
+    max-width: 50%;
+    background-color: rgba(49, 6, 88, 0.1);
+    border: solid 2px rgba(87, 13, 156, 0.5);
+    border-radius: 20px;
+    box-shadow: rgba(94, 12, 170, 0.3) 0px 3px 8px;
+    justify-self: center;
+}
+
+form>input, form>button, textarea {
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px 5px 10px;
+    border: solid 2px rgba(49, 6, 88, 0.3);
+    border-radius: 15px;
+    background-color: white;
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

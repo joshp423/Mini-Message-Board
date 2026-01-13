@@ -5,11 +5,11 @@
     </head>
     <body>
         <%- include('navbar', {links: links}) %>
-        <div>
+        <div class="newMessage">
             <h1>New Message</h1>
-            <form method="post" action="/new">
+            <form method="post" action="/new" id="newMessageForm">
                 <input type="text" placeholder="Your Name" name="messageUser">
-                <input type="text" placeholder="Message Text" name="messageText">
+                <textarea placeholder="Message Text"name="messageText" id="newMessageForm"></textarea>
                 <button type="submit">Submit Message</button>
             </form>
         </div>
