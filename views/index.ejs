@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Mini Messagine App</title>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <%- include('navbar', {links: links}) %>
+        <div class="messageSection">
+            <% messages.forEach((message) => { %>
+                <%- include('messages/text', {message: message}); %>
+            <% }); %>
+        </div>
+    </body>
+</html>
