@@ -1,5 +1,4 @@
 require('dotenv').config();
-const { Client } = require("pg");
 const db = require("../db/queries");
 
 const links = [
@@ -22,13 +21,16 @@ async function newMessagePost(req, res) {
 };
 
 async function messageDetailsGet (req, res) {
-    for (const message of messages) {
-        if (message.user === req.params.username && message.added.toDateString() === new Date(req.params.date).toDateString()) {
-        res.render("./messages/messageDetails", {title:"Message Details", message: message, links: links})
+    const message = await db.getSelectedMessage(req);
+    if (!message) {
+        res.status(404).send("Message not found");
         return;
-        }
     }
-    res.status(404).send("Message not found");
+    res.render("./messages/messageDetails", 
+      {title:"Message Details",
+        message: message,
+        links: links
+    });
 };
 
 module.exports = {

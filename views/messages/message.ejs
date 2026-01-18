@@ -2,7 +2,7 @@
     <h1> <%= message.text %> </h1>
     <h3> <%= message.user %></h3>
     <p> Sent at: <%= message.added %></p>
-    <a href="/<%= message.user %>/messages/<%= message.added %>">
-        <button" type="button">Open</button>
+    <a href="/messages/<%= message.id %>">
+        <button type="button">Open</button>
     </a>
 </div>

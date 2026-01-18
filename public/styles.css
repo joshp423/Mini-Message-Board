@@ -117,3 +117,9 @@ form {
     gap: 10px;
 }
 
+button {
+    background-color: white;
+    border: none;
+    font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+    font-weight: 500;
+}

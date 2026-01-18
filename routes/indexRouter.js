@@ -6,6 +6,6 @@ const indexRouter = Router();
 indexRouter.get("/", indexController.existingMessagesGet);
 indexRouter.get("/new", indexController.newMessageGet);
 indexRouter.post("/new", indexController.newMessagePost);
-indexRouter.get("/:username/messages/:date", indexController.messageDetailsGet);
+indexRouter.get("/messages/:messageid/", indexController.messageDetailsGet);
 
 module.exports = indexRouter;
