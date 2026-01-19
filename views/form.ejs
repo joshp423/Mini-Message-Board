@@ -1,15 +1,16 @@
 <html>
     <head>
-        <title>Mini Messaging App</title>
+        <title>Create new message</title>
         <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
         <%- include('navbar', {links: links}) %>
         <div class="newMessage">
+            <%- include("partials/errors.ejs") %>
             <h1>New Message</h1>
             <form method="post" action="/new" id="newMessageForm">
-                <input type="text" placeholder="Your Name" name="messageUser">
-                <textarea placeholder="Message Text"name="messageText" id="newMessageForm"></textarea>
+                <input type="text" placeholder="Your Name" name="messageUser" required>
+                <textarea placeholder="Message Text"name="messageText" id="newMessageForm" required></textarea>
                 <button type="submit">Submit Message</button>
             </form>
         </div>

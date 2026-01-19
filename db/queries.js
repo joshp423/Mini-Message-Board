@@ -17,7 +17,16 @@ async function getSelectedMessage(req) {
     return rows[0];
 }
 
+async function addNewMessage(messageUser, messageText) {
+    const {rows} = await pool.query(
+        `INSERT INTO messages (text, "user", added) VALUES
+        ($1, $2, CURRENT_TIMESTAMP)`,
+        [messageText, messageUser]
+    )
+}
+
 module.exports = {
     getAllMessages,
-    getSelectedMessage
+    getSelectedMessage,
+    addNewMessage
 }
